@@ -15,14 +15,14 @@ public class Sprite {
 	public static Sprite player_left = new Sprite(32 ,4 ,7, SpriteSheet.tiles);
 	public static Sprite player_right = new Sprite(32 ,3 ,7, SpriteSheet.tiles);
 	
-	public static Sprite player_forward_1 = new Sprite(32, 1, 6, SpriteSheet.tiles);
-	public static Sprite player_forward_2 = new Sprite(32, 1, 5, SpriteSheet.tiles);
-	public static Sprite player_forward_3 = new Sprite(32, 1, 4, SpriteSheet.tiles);
-	public static Sprite player_forward_4 = new Sprite(32, 1, 3, SpriteSheet.tiles);
-	public static Sprite player_forward_5 = new Sprite(32, 1, 2, SpriteSheet.tiles);
-	public static Sprite player_forward_6 = new Sprite(32, 1, 1, SpriteSheet.tiles);
-	public static Sprite player_forward_7 = new Sprite(32, 0, 2, SpriteSheet.tiles);
-	public static Sprite player_forward_8 = new Sprite(32, 0, 1, SpriteSheet.tiles);
+	public static Sprite player_forward_1 = new Sprite(32, 0, 4, SpriteSheet.tiles);
+	public static Sprite player_forward_2 = new Sprite(32, 1, 4, SpriteSheet.tiles);
+	public static Sprite player_forward_3 = new Sprite(32, 2, 4, SpriteSheet.tiles);
+	public static Sprite player_forward_4 = new Sprite(32, 3, 4, SpriteSheet.tiles);
+	public static Sprite player_forward_5 = new Sprite(32, 4, 4, SpriteSheet.tiles);
+	public static Sprite player_forward_6 = new Sprite(32, 5, 4, SpriteSheet.tiles);
+	public static Sprite player_forward_7 = new Sprite(32, 6, 4, SpriteSheet.tiles);
+	public static Sprite player_forward_8 = new Sprite(32, 2, 6, SpriteSheet.tiles);
 	
 	
 	public Sprite(int size, int x, int y, SpriteSheet sheet) {
