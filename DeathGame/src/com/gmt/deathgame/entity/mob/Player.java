@@ -12,12 +12,30 @@ public class Player extends Mob {
 	private float speed;
 	private int anim = 0;						//timer or animation step
 	private int animFrame = 0;					//current animation frame
+	private int animLength = 0;
+	private String currentAnimation = "";
+	private String lastAnimation = "";
+	private boolean isAnimChanged = false;
 	private boolean walking = false;
+	
 	
 	private Sprite[] animationForward = new Sprite[] 
 			{Sprite.player_forward_1, Sprite.player_forward_2, Sprite.player_forward_3,
 			 Sprite.player_forward_4, Sprite.player_forward_5, Sprite.player_forward_6,
-			 Sprite.player_forward_7};
+			 Sprite.player_forward_7, Sprite.player_forward_8};
+	private Sprite[] animationBackward = new Sprite[] 
+			{Sprite.player_backward_1, Sprite.player_backward_2, Sprite.player_backward_3,
+			 Sprite.player_backward_4, Sprite.player_backward_5, Sprite.player_backward_6,
+			 Sprite.player_backward_7, Sprite.player_backward_8};
+	private Sprite[] animationRight = new Sprite[] 
+			{Sprite.player_right_1, Sprite.player_right_2, Sprite.player_right_3,
+			 Sprite.player_right_4, Sprite.player_right_5, Sprite.player_right_6,
+			 Sprite.player_right_7, Sprite.player_right_8};
+	private Sprite[] animationLeft = new Sprite[] 
+			{Sprite.player_left_1, Sprite.player_left_2, Sprite.player_left_3,
+			 Sprite.player_left_4, Sprite.player_left_5, Sprite.player_left_6,
+			 Sprite.player_left_7, Sprite.player_left_8};
+	
 	
 	
 	public Player(Keyboard input) {
@@ -38,10 +56,18 @@ public class Player extends Mob {
 		if (anim < 7500) anim++;						//updates the animation steps and how fast the animation should play
 		else anim = 0;
 		if( anim % 6 == 0  ) {
-			if(animFrame < animationForward.length-1)
-				animFrame++;
+			if(animFrame < animLength-1) {
+				if(currentAnimation == lastAnimation) {
+					isAnimChanged = false;
+				}
+				if(!isAnimChanged) {					//check and see if the animation being played has changed
+					animFrame++;
+				}
+				else animFrame = 0;
+			}
 			else animFrame = 0;
 		}
+		lastAnimation = currentAnimation;
 		
 		if (input.up) ya--;				//this movement affects the entity's x and y coordinates
 		if (input.down) ya++;
@@ -58,15 +84,38 @@ public class Player extends Mob {
 	}
 	
 	public void render(Screen screen) {
-		if(dir == 0) sprite = Sprite.player_back;
-		if(dir == 1) sprite = Sprite.player_right;
+		if(dir == 0){
+			sprite = Sprite.player_back;
+			if(walking) {
+				currentAnimation = "animationBackward";
+				animLength = animationBackward.length;
+				sprite = animationBackward[animFrame];
+			}
+		}
+		if(dir == 1) { 
+			sprite = Sprite.player_right;
+			if(walking) {
+				currentAnimation = "animationRight";
+				animLength = animationRight.length;
+				sprite = animationRight[animFrame];
+			}
+		}
 		if(dir == 2) {
 			sprite = Sprite.player_forward;
 			if(walking) {
-					sprite = animationForward[animFrame];
+				currentAnimation = "animationForward";
+				animLength = animationForward.length;
+				sprite = animationForward[animFrame];
 			}
 		}
-		if(dir == 3) sprite = Sprite.player_left;
+		if(dir == 3) {
+			sprite = Sprite.player_left;
+			if(walking) {
+				currentAnimation = "animationLeft";
+				animLength = animationLeft.length;
+				sprite = animationLeft[animFrame];
+			}
+		}
 		
 		screen.renderPlayer(x-16, y-16, sprite);			//renders sprite and centers
 		

@@ -24,6 +24,33 @@ public class Sprite {
 	public static Sprite player_forward_7 = new Sprite(32, 6, 4, SpriteSheet.tiles);
 	public static Sprite player_forward_8 = new Sprite(32, 2, 6, SpriteSheet.tiles);
 	
+	public static Sprite player_backward_1 = new Sprite(32, 0, 2, SpriteSheet.tiles);
+	public static Sprite player_backward_2 = new Sprite(32, 1, 2, SpriteSheet.tiles);
+	public static Sprite player_backward_3 = new Sprite(32, 2, 2, SpriteSheet.tiles);
+	public static Sprite player_backward_4 = new Sprite(32, 3, 2, SpriteSheet.tiles);
+	public static Sprite player_backward_5 = new Sprite(32, 4, 2, SpriteSheet.tiles);
+	public static Sprite player_backward_6 = new Sprite(32, 5, 2, SpriteSheet.tiles);
+	public static Sprite player_backward_7 = new Sprite(32, 6, 2, SpriteSheet.tiles);
+	public static Sprite player_backward_8 = new Sprite(32, 0, 6, SpriteSheet.tiles);
+	
+	public static Sprite player_right_1 = new Sprite(32, 0, 5, SpriteSheet.tiles);
+	public static Sprite player_right_2 = new Sprite(32, 1, 5, SpriteSheet.tiles);
+	public static Sprite player_right_3 = new Sprite(32, 2, 5, SpriteSheet.tiles);
+	public static Sprite player_right_4 = new Sprite(32, 3, 5, SpriteSheet.tiles);
+	public static Sprite player_right_5 = new Sprite(32, 4, 5, SpriteSheet.tiles);
+	public static Sprite player_right_6 = new Sprite(32, 5, 5, SpriteSheet.tiles);
+	public static Sprite player_right_7 = new Sprite(32, 6, 5, SpriteSheet.tiles);
+	public static Sprite player_right_8 = new Sprite(32, 3, 6, SpriteSheet.tiles);
+	
+	public static Sprite player_left_1 = new Sprite(32, 0, 3, SpriteSheet.tiles);
+	public static Sprite player_left_2 = new Sprite(32, 1, 3, SpriteSheet.tiles);
+	public static Sprite player_left_3 = new Sprite(32, 2, 3, SpriteSheet.tiles);
+	public static Sprite player_left_4 = new Sprite(32, 3, 3, SpriteSheet.tiles);
+	public static Sprite player_left_5 = new Sprite(32, 4, 3, SpriteSheet.tiles);
+	public static Sprite player_left_6 = new Sprite(32, 5, 3, SpriteSheet.tiles);
+	public static Sprite player_left_7 = new Sprite(32, 6, 3, SpriteSheet.tiles);
+	public static Sprite player_left_8 = new Sprite(32, 1, 6, SpriteSheet.tiles);
+
 	
 	public Sprite(int size, int x, int y, SpriteSheet sheet) {
 		SIZE = size;
